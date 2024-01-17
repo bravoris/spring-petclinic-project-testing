@@ -2,7 +2,7 @@ FROM openjdk:17-jdk-slim
 
 COPY target/*.jar /app
 
-WORKDIR /home/petclinic/
+WORKDIR /app
 
 EXPOSE 8081
 
