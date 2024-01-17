@@ -19,8 +19,8 @@ pipeline {
         stage("docker build and test"){
             steps {
                 sh '''
-                docker build -t bravoriS/pet-clinic:latest .
-                docker run bravoriS/pet-clinic:latest
+                docker build -t rishhe/pet-clinic:latest .
+                docker run rishhe/pet-clinic:latest
                 '''
             }
         }
