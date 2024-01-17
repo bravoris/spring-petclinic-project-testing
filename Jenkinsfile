@@ -7,7 +7,7 @@ pipeline {
                 git url: 'https://github.com/bravoris/spring-petclinic-project-testing.git', branch: 'dev'
             }
         }
-        stage("mvn build"){
+        stage("mvn build") {
             steps {
                 sh ''' 
                 export M2_HOME=/opt/apache-maven-3.9.6
@@ -16,6 +16,7 @@ pipeline {
                 mvn clean install
                 '''
             } 
+        }
         stage("docker build and test"){
             steps {
                 sh '''
@@ -23,7 +24,6 @@ pipeline {
                 docker run rishhe/pet-clinic:latest
                 '''
             }
-        }
         }
     }
 }
