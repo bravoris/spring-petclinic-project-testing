@@ -2,7 +2,7 @@ FROM openjdk:17-jdk-slim
 
 RUN mkdir -p /home/petclinic
 
-COPY target/spring-petclinic-3.1.0-SNAPSHOT.jar /home/petclinic
+COPY ./target/spring-petclinic-3.1.0-SNAPSHOT.jar /home/petclinic
 
 WORKDIR /home/petclinic
 
