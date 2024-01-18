@@ -17,13 +17,12 @@ pipeline {
                 '''
             } 
         }
-        /*stage("docker build and test"){
+        stage("docker build and test"){
             steps {
                 sh '''
                 docker build -t rishhe/pet-clinic:latest .
-                docker run rishhe/pet-clinic:latest
                 '''
             }
-        }*/
+        }
     }
 }
