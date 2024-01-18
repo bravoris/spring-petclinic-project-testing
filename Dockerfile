@@ -1,6 +1,8 @@
 FROM openjdk:17-jdk-slim
 
-COPY target/*.jar /home/petclinic
+RUN mkdir -p /home/petclinic
+
+COPY target/spring-petclinic-3.1.0-SNAPSHOT.jar /home/petclinic
 
 WORKDIR /home/petclinic
 
