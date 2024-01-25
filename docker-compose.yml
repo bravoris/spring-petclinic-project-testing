@@ -2,16 +2,15 @@ version: "3"
 
 services:
   mysql:
-    image: mysql 8.0
+    image: mysql:8.0
     container_name: mysql_db
     ports:
       - "3306:3306"
     environment:
-      environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_ALLOW_EMPTY_PASSWORD=true
-      - MYSQL_USER=petclinic
-      - MYSQL_PASSWORD=petclinic
-      - MYSQL_DATABASE=petclinic
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      MYSQL_USER: "petclinic"
+      MYSQL_PASSWORD: "petclinic"
+      MYSQL_DATABASE: "petclinic"
     volumes:
       - "./src/main/resources/db/mysql/usr.sql:/docker-entrypoint-initdb.d/usr.sql"
