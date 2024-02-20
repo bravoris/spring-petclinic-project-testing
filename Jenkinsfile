@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub_id')
+    }
     stages {
         stage("Git Checkout") {
             steps {
