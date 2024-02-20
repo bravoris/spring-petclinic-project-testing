@@ -78,14 +78,12 @@ public class PostgresIntegrationTests {
 	}
 
 	@Test
-	@Disabled("Skipping this test for a specific reason")
 	void testFindAll() throws Exception {
 		vets.findAll();
 		vets.findAll(); // served from cache
 	}
 
 	@Test
-	@Disabled("Skipping this test for a specific reason")
 	void testOwnerDetails() {
 		RestTemplate template = builder.rootUri("http://localhost:" + port).build();
 		ResponseEntity<String> result = template.exchange(RequestEntity.get("/owners/1").build(), String.class);
