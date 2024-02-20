@@ -1,6 +1,7 @@
 pipeline {
     agent any
-
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub_id')
     stages {
         stage("Git Checkout") {
             steps {
@@ -23,6 +24,20 @@ pipeline {
                 docker build -t rishhe/pet-clinic:latest .
                 '''
             }
+        stage("docker push"){
+            steps {
+                sh '''
+                echo $Docker_TOKEN_PSW | docker login -u $Docker_TOKEN_USR --password-stdin
+                docker push rishhe/pet-clinic:latest
+                '''
+            }
+
+        }
+        }
+    }
+    post {
+        always {
+            sh "docker logout"
         }
     }
 }
