@@ -25,6 +25,7 @@ pipeline {
                 docker build -t rishhe/pet-clinic:latest .
                 '''
             }
+        }
         stage("docker push"){
             steps {
                 sh '''
@@ -32,10 +33,8 @@ pipeline {
                 docker push rishhe/pet-clinic:latest
                 '''
             }
-
         }
         }
-    }
     post {
         always {
             sh "docker logout"
