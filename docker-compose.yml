@@ -1,6 +1,8 @@
 version: "3"
 
 services:
+  backend:
+
   mysql:
     image: mysql:8.0
     container_name: mysql_db
@@ -13,4 +15,4 @@ services:
       MYSQL_PASSWORD: "petclinic"
       MYSQL_DATABASE: "petclinic"
     volumes:
-      - "./src/main/resources/db/mysql/usr.sql:/docker-entrypoint-initdb.d/usr.sql"
+      - "./src/main/resources/db/mysql/user.sql:/docker-entrypoint-initdb.d/user.sql"
