@@ -50,7 +50,7 @@ pipeline:
                       - latest
                     dockerfile: Dockerfile
           platform:
-            os: Linux
+            os: Windows
             arch: Amd64
           runtime:
             type: Docker
