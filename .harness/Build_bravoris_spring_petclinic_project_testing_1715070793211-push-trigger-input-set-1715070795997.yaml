@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_bravoris_spring_petclinic_project_testing_1715070793211-push-trigger-input-set
+  identifier: Build_bravoris_spring_petclinic_project_testing_1715070793211pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_bravoris_spring_petclinic_project_testing_1715070793211
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
